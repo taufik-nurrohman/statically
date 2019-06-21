@@ -1,23 +1,44 @@
-<nav class="nav">
-    <ul>
-        <li{% if page.permalink == '/' %} class="active"{% endif %}>
-            <a href="{{site.url}}/"><i class="fa fa-home prime"></i> Home</a>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-statically">
+  <a class="navbar-brand" href="/">{{site.title}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="nav">
+    <ul class="navbar-nav">
+      {% for nav in site.data.nav %}
+        {% if nav.children and nav.children.size > 0 %}
+        <li class="nav-item dropdown">
+          {% if nav.url %}
+          <a class="nav-link dropdown-toggle" href="{{nav.url | absolute_url}}" id="toggle:{{nav.title | slugify}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{nav.description}}">{{nav.title}}</a>
+          {% elsif nav.link %}
+          <a class="nav-link dropdown-toggle" href="{{nav.link}}" id="toggle:{{nav.title | slugify}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{nav.description}}" target="_blank">{{nav.title}}</a>
+          {% else %}
+          <a class="nav-link disabled" href="javascript:;">{{nav.title}}</a>
+          {% endif %}
+          <div class="dropdown-menu" aria-labelledby="toggle:{{nav.title | slugify}}">
+          {% for children in nav.children %}
+            {% if children.url %}
+            <a class="dropdown-item" href="{{children.url | absolute_url}}" title="{{children.description}}">{{children.title}}</a>
+            {% elsif children.link %}
+            <a class="dropdown-item" href="{{children.link}}" title="{{children.description}}" target="_blank">{{children.title}}</a>
+            {% else %}
+            <a class="dropdown-item disabled" href="javascript:;" title="{{children.description}}">{{children.title}}</a>
+            {% endif %}
+          {% endfor %}
+          </div>
         </li>
-        <li{% if page.permalink == '/imgpx' %} class="active"{% endif %}>
-            <a href="{{site.url}}/imgpx"><i class="fa fa-bolt optimus"></i> Imgpx</a>
+        {% else %}
+        <li class="nav-item">
+          {% if nav.url %}
+          <a class="nav-link" href="{{nav.url | absolute_url}}" title="{{nav.description}}">{{nav.title}}</a>
+          {% elsif nav.link %}
+          <a class="nav-link" href="{{nav.link}}" title="{{nav.description}}" target="_blank">{{nav.title}}</a>
+          {% else %}
+          <a class="nav-link disabled" href="javascript:;" title="{{nav.description}}">{{nav.title}}</a>
+          {% endif %}
         </li>
-        </li>
-        <li{% if page.permalink == '/sponsors' %} class="active"{% endif %}>
-            <a href="{{site.url}}/sponsors"><i class="fa fa-award bumble"></i> Sponsors</a>
-        </li>
-        <li{% if page.permalink == '/donate' %} class="active"{% endif %}>
-            <a href="{{site.url}}/donate"><i class="fa fa-heart pink"></i> Donate</a>
-        </li>
-        <li{% if page.permalink == '/network' %} class="active"{% endif %}>
-            <a href="{{site.url}}/network"><i class="fa fa-globe sentinel"></i> Network</a>
-        </li>
-        <li>
-            <a class="gh" href="{{site.repo}}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        </li>
+        {% endif %}
+      {% endfor %}
     </ul>
+  </div>
 </nav>

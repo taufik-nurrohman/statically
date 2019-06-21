@@ -1,0 +1,28 @@
+- title: Features
+  description: The available CDN
+  url: '#'
+  children:
+  - title: Git Repository CDN
+    link: /
+  - title: Imgpx
+    link: /imgpx
+  - title: Favicons
+    link: /favicons
+  - title: Screenshot
+    link: /screenshot
+
+- title: Documentation
+  description: Go to the documentation pages!
+  url: https://developers.marsble.com
+
+- title: Blog
+  description: Coming soon!
+  url: /blog
+
+- title: Network
+  description: Our network.
+  url: /network
+
+- title: GitHub
+  description: Fork the project!
+  link: https://github.com/marsble/statically
