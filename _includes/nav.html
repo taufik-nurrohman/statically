@@ -1,40 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar-statically">
-  <a class="navbar-brand" href="/">{{site.title}}</a>
+<nav class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand" href="{{ site.url }}">{{ site.title }}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/></svg>
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="nav">
     <ul class="navbar-nav">
       {% for nav in site.data.nav %}
         {% if nav.children and nav.children.size > 0 %}
         <li class="nav-item dropdown">
-          {% if nav.url %}
-          <a class="nav-link dropdown-toggle" href="{{nav.url | absolute_url}}" id="toggle:{{nav.title | slugify}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{nav.description}}">{{nav.title}}</a>
+          {% if nav.path %}
+          <a class="nav-link dropdown-toggle" href="{{ nav.path | prepend: site.url }}" id="toggle:{{ nav.title | slugify }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{ nav.description }}">{{ nav.title }}</a>
           {% elsif nav.link %}
-          <a class="nav-link dropdown-toggle" href="{{nav.link}}" id="toggle:{{nav.title | slugify}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{nav.description}}" target="_blank">{{nav.title}}</a>
+          <a class="nav-link dropdown-toggle" href="{{ nav.link }}" id="toggle:{{ nav.title | slugify }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{ nav.description }}" target="_blank">{{ nav.title }}</a>
           {% else %}
-          <a class="nav-link disabled" href="javascript:;">{{nav.title}}</a>
+          <a class="nav-link disabled" href="javascript:;">{{ nav.title }}</a>
           {% endif %}
-          <div class="dropdown-menu" aria-labelledby="toggle:{{nav.title | slugify}}">
+          <div class="dropdown-menu" aria-labelledby="toggle:{{ nav.title | slugify }}">
           {% for children in nav.children %}
-            {% if children.url %}
-            <a class="dropdown-item" href="{{children.url | absolute_url}}" title="{{children.description}}">{{children.title}}</a>
+            {% if children.path %}
+            <a class="dropdown-item" href="{{ children.path | prepend: site.url }}" title="{{ children.description }}">{{ children.title }}</a>
             {% elsif children.link %}
-            <a class="dropdown-item" href="{{children.link}}" title="{{children.description}}" target="_blank">{{children.title}}</a>
+            <a class="dropdown-item" href="{{ children.link }}" title="{{ children.description }}" target="_blank">{{ children.title }}</a>
             {% else %}
-            <a class="dropdown-item disabled" href="javascript:;" title="{{children.description}}">{{children.title}}</a>
+            <a class="dropdown-item disabled" href="javascript:;" title="{{ children.description }}">{{ children.title }}</a>
             {% endif %}
           {% endfor %}
           </div>
         </li>
         {% else %}
         <li class="nav-item">
-          {% if nav.url %}
-          <a class="nav-link" href="{{nav.url | absolute_url}}" title="{{nav.description}}">{{nav.title}}</a>
+          {% if nav.path %}
+          <a class="nav-link" href="{{ nav.path | prepend: site.url }}" title="{{ nav.description }}">{{ nav.title }}</a>
           {% elsif nav.link %}
-          <a class="nav-link" href="{{nav.link}}" title="{{nav.description}}" target="_blank">{{nav.title}}</a>
+          <a class="nav-link" href="{{ nav.link }}" title="{{ nav.description }}" target="_blank">{{ nav.title }}</a>
           {% else %}
-          <a class="nav-link disabled" href="javascript:;" title="{{nav.description}}">{{nav.title}}</a>
+          <a class="nav-link disabled" href="javascript:;" title="{{ nav.description }}">{{ nav.title }}</a>
           {% endif %}
         </li>
         {% endif %}

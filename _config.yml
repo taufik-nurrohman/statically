@@ -1,10 +1,36 @@
 title: Statically
 slogan: A free multi-CDN for open source project, WordPress, images and more!
 description: Statically is a free multi-CDN for open source project, WordPress, images and other assets with high-performance of caching and optimization.
-baseurl: 'https://statically.io'
+permalink: /:title/
+url: 'file:///F:/GitHub/tovic/statically/_site' # 'https://statically.io'
 
 language: en
+direction: ltr
 charset: utf-8
 version: 2.0.0
 
-defaults: []
+# Default field values for pages
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      title: 'Page Title'
+      description: 'Page description.'
+      layout: blank
+      layout_data:
+        action: blank
+        skin:
+          # [background-color, color]
+          body: ['#1a252f', '#fff']
+          # [a, a:hover, a:active]
+          a: ['#BBBEC1', '#E9EAEB']
+          # [button, button:hover, button:active]
+          button: []
+
+# Include to public directory
+include:
+  - '_headers'
+  - '_pages'
+  - '_redirects'
+  - '_redirections'

@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html lang="{{site.language}}">
-
-<head>
-
-  <meta charset="{{site.charset}}">
-  <meta name="viewport" content="width=device-width">
-  <meta name="description" content="{{site.description}}">
-
-  <title>{{site.title}}. {{site.slogan}}</title>
-
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300i,400i,700i|Alfa+Slab+One:400" rel="stylesheet">
-
-  <link href="css/landing-page.css?v={{site.version}}" rel="stylesheet">
-
-</head>
-
-<body>
-
-{% include nav.html %}
+<html dir="{{ page.direction | default: site.direction }}" lang="{{ page.language | default: site.language }}">
+  <head>
+    <meta charset="{{ page.charset | default: site.charset }}">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <title>{{ site.title }}. {{ page.description | default: site.description }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300i,400i,700i|Alfa+Slab+One:400" rel="stylesheet">
+    <link href="{{ site.url }}/static/css/bootstrap.min.css?v={{ site.version }}" rel="stylesheet">
+    <link href="{{ site.url }}/static/css/font-awesome.min.css?v={{ site.version }}" rel="stylesheet">
+    <link href="{{ site.url }}/static/css/statically.css?v={{ site.version }}" rel="stylesheet">
+    {% if page.layout_data.skin %}
+    <style>
+    {% if page.layout_data.skin.body %}
+    body {
+      background: {{ page.layout_data.skin.body[0] | default: '#fff' }};
+      color: {{ page.layout_data.skin.body[1] | default: '#000' }};
+    }
+    {% endif %}
+    {% if page.layout_data.skin.a %}
+      {% if page.layout_data.skin.a[0] %}
+      a {
+        color: {{ page.layout_data.skin.a[0] }};
+      }
+      {% endif %}
+      {% if page.layout_data.skin.a[1] %}
+      a:focus, a:hover {
+        color: {{ page.layout_data.skin.a[1] }};
+      }
+      {% endif %}
+      {% if page.layout_data.skin.a[2] %}
+      a:active {
+        color: {{ page.layout_data.skin.a[2] }};
+      }
+      {% endif %}
+    {% endif %}
+    </style>
+    {% endif %}
+  </head>
+  <body>
+    {% include nav.html %}

@@ -59,7 +59,7 @@
               <a href="#">Privacy Policy</a>
             </li>
           </ul>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+          <p class="copyright small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ul class="list-inline mb-0">
@@ -83,11 +83,17 @@
       </div>
     </div>
   </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script src="{{ site.url }}/static/js/jquery.min.js?v={{ site.version }}"></script>
+  <script src="{{ site.url }}/static/js/bootstrap.min.js?v={{ site.version }}"></script>
+  <script src="{{ site.url }}/static/js/statically.js?v={{ site.version }}"></script>
+  {% if page.layout_data.skin %}
+  <script src="{{ site.url }}/static/js/network.min.js?v={{ site.version }}"></script>
+  <script>
+  new ParticleNetwork(document.querySelector('#canvas'), {
+      background: '{{ page.layout_data.skin.body[0] }}',
+      particleColor: '{{ page.layout_data.skin.body[1] }}'
+  });
+  </script>
+  {% endif %}
 </body>
-
 </html>

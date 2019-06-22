@@ -1,0 +1,31 @@
+{% include header.html %}
+
+{% include {{page.layout_data.action}}.html %}
+
+{% if page.layout_data.features %}
+<section class="features">
+  <div class="container">
+    <div class="row">
+      {% for feature in page.layout_data.features %}
+      <div class="col-lg-4">
+        <div class="features-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <div class="d-flex">
+            {% if feature.image %}
+            <img alt="" class="icon mx-auto mb-4" src="{{ site.url }}{{ feature.image }}?v={{ site.version }}">
+            {% elsif feature.icon %}
+            <i class="icon mx-auto mb-4 fa fa-{{ feature.icon }}"></i>
+            {% else %}
+            <!-- no icon -->
+            {% endif %}
+          </div>
+          <h3>{{ feature.title }}</h3>
+          <p class="lead mb-0">{{ feature.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include footer.html %}

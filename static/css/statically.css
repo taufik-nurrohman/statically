@@ -2,6 +2,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+a, a:focus, a:hover, a:active {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -12,63 +16,90 @@ h6 {
   font-weight: normal;
 }
 
-header.masthead {
-  position: relative;
-  background: #ed2f3c;
-  color: #fff;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.navbar-toggler {
+  color: inherit;
 }
 
-header.masthead .overlay {
+.master {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.navbar.fixed-top + .master {
+  padding-top: 5rem;
+}
+
+.navbar-is-solid .navbar {
+  background: inherit;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+}
+
+.master .overlay {
   position: absolute;
-  background-color: #212529;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  z-index: 1;
 }
 
-header.masthead .overlay #canvas {
+.master .overlay div {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-header.masthead .form-control {
+.master .container {
+  position: relative;
+  z-index: 2;
+}
+
+.master .form-control {
   background: rgba(255, 255, 255, .125);
   color: #fff;
   border: 3px solid transparent;
   border-radius: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .125);
 }
-header.masthead .form-control:hover {
+
+.master .form-control:hover {
   border-color: rgba(255, 255, 255, .25);
 }
-header.masthead .form-control:focus {
+
+.master .form-control:focus {
   border-color: #fff;
   text-align: left !important;
 }
-header.masthead .form-control::placeholder {
+
+.master .form-control::placeholder {
   color: rgba(255, 255, 255, .6);
 }
-header.masthead .form-control:focus::placeholder {
+
+.master .form-control:focus::placeholder {
   color: transparent;
 }
 
-header.masthead h1 {
+.master h1 {
   font-size: 2rem;
 }
 
 @media (min-width: 768px) {
-  header.masthead {
+  .master {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
-  header.masthead h1 {
+  .navbar.fixed-top + .master {
+    padding-top: 9rem;
+  }
+  .master h1 {
     font-size: 3rem;
   }
+}
+
+.showcase {
+  background: rgba(0, 0, 0, .2);
 }
 
 .showcase .showcase-text {
@@ -80,39 +111,41 @@ header.masthead h1 {
   background-size: cover;
 }
 
-@media (min-width: 768px) {
-  .showcase .showcase-text {
-    padding: 7rem;
-  }
-}
-
-.features-icons {
-  background: #a22c37;
-  color: #fff;
+.features {
+  background: rgba(0, 0, 0, .125);
   padding-top: 3rem;
   padding-bottom: 3rem;
+  text-align: center;
 }
 
-.features-icons .features-icons-item {
+.features .features-item {
   max-width: 20rem;
 }
 
-.features-icons .features-icons-item .features-icons-icon {
+.features .icon {
+  display: block;
+  width: 40%;
+  height: auto;
+}
+
+.features .features-item .icon.fa {
+  width: 7rem;
   height: 7rem;
+  line-height: 7rem;
 }
 
-.features-icons .features-icons-item .features-icons-icon i {
-  font-size: 4.5rem;
-  color: #ffa !important;
+.features .features-item .icon.fa {
+  font-size: 6rem;
 }
 
-.features-icons .features-icons-item:hover .features-icons-icon i {
+.features .features-item:hover .fa {
   font-size: 5rem;
 }
 
 .testimonials {
   padding-top: 7rem;
   padding-bottom: 7rem;
+  background: rgba(0, 0, 0, .25)!important;
 }
 
 .testimonials .testimonial-item {
@@ -128,7 +161,7 @@ header.masthead h1 {
 .call-to-action {
   position: relative;
   background-color: #343a40;
-  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background: url("../img/bg-master.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -144,19 +177,8 @@ header.masthead h1 {
   opacity: 0.3;
 }
 
-footer.footer {
+.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
-}
-
-
-
-
-
-
-.navbar-statically {
-  background: #a72a36;
-  box-shadow: 0 0 20px rgba(0, 0, 0, .4);
-  position: relative;
-  z-index: 2;
+  background: rgba(0, 0, 0, .35);
 }
