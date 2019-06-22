@@ -1,21 +1,27 @@
 ---
-title: A free multi-CDN for open source project, WordPress, images and more!
-description: Statically is a free multi-CDN for open source project, WordPress, images and other assets with high-performance of caching and optimization.
+title: 'A free multi-CDN for open source project, WordPress, images and more!'
+description: 'Statically is a free multi-CDN for open source project, WordPress, images and other assets with high-performance of caching and optimization.'
+js: |
+  Object.assign(STATICALLY_PASTE_DATA, {
+      'https?\\/\\/github url etc': 'replacement',
+      'https?\\/\\/gitlab url etc': 'replacement',
+      'https?\\/\\/bitbucket url etc': 'replacement'
+  });
 layout: home
 layout_data:
-  action: form/paste
+  header: form/paste
+  header_data:
+    placeholder: ['Paste a GitHub, GitLab or Bitbucket URL here&hellip;', ""]
   skin:
-    #body: ['#b4242e', '#fff']
-    #a: ['#E9BEC1', '#F8EAEB']
+    body: ['#ed2f3c', '#fff']
   features:
-    - title: For Developers
-      description: Load your project from GitHub, GitLab and Bitbucket easily!
+    - title: 'For Developers'
+      description: 'Load your project from GitHub, GitLab and Bitbucket easily!'
       image: /static/png/laptop.png
-    - title: No Traffic Limits
-      description: Free from throttling. Files are served via <a href="/network">super fast global CDNs</a>.
+    - title: 'Unlimited Traffics'
+      description: 'No traffic limits or throttling. Files are served via <a href="/network">super fast global CDNs</a>.'
       image: /static/png/traffic.png
-    - title: Long Life Cache
-      description: Files are cached in the browser for 1 year. Learn more about <a href="/network#cache">cache behavior</a>.
+    - title: 'Long Life Cache'
+      description: 'Files are cached in the browser for 1 year. Learn more about <a href="/network#cache">cache behavior</a>.'
       image: /static/png/seo-and-web.png
-  placeholder: ['Paste a GitHub, GitLab or Bitbucket URL here&hellip;', ""]
 ---

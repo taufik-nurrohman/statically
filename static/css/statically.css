@@ -22,13 +22,22 @@ h6 {
 
 .master {
   position: relative;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 8.5rem;
+  padding-bottom: 6rem;
   text-align: center;
 }
 
-.navbar.fixed-top + .master {
-  padding-top: 5rem;
+.layout-page .master,
+.layout-post .master {
+  padding-top: 5.5rem;
+  padding-bottom: 2rem;
+}
+
+.layout-page article,
+.layout-post article {
+  border-top: 1px solid rgba(255, 255, 255, .05);
+  padding-top: 1rem;
+  margin-bottom: 4rem;
 }
 
 .navbar-is-solid .navbar {
@@ -62,6 +71,7 @@ h6 {
   border: 3px solid transparent;
   border-radius: 0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .125);
+  transition: border-color .125s ease-out;
 }
 
 .master .form-control:hover {
@@ -69,8 +79,9 @@ h6 {
 }
 
 .master .form-control:focus {
-  border-color: #fff;
+  border-color: inherit;
   text-align: left !important;
+  transition: none;
 }
 
 .master .form-control::placeholder {
@@ -86,29 +97,9 @@ h6 {
 }
 
 @media (min-width: 768px) {
-  .master {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-  .navbar.fixed-top + .master {
-    padding-top: 9rem;
-  }
   .master h1 {
     font-size: 3rem;
   }
-}
-
-.showcase {
-  background: rgba(0, 0, 0, .2);
-}
-
-.showcase .showcase-text {
-  padding: 3rem;
-}
-
-.showcase .showcase-img {
-  min-height: 30rem;
-  background-size: cover;
 }
 
 .features {
@@ -140,6 +131,25 @@ h6 {
 
 .features .features-item:hover .fa {
   font-size: 5rem;
+}
+
+.contents {
+  background: rgba(0, 0, 0, .2);
+}
+
+.contents article {
+  background: none;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.contents .contents-text {
+  padding: 3rem;
+}
+
+.contents .contents-img {
+  min-height: 30rem;
+  background-size: cover;
 }
 
 .testimonials {
@@ -181,4 +191,16 @@ h6 {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background: rgba(0, 0, 0, .35);
+}
+
+.max-width {
+  max-width: 768px;
+}
+
+@media (max-width: 800px) {
+  .max-width {
+    max-width: 100%;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
 }

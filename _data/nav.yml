@@ -1,28 +1,31 @@
-- title: Features
-  description: The available CDN
-  path: '#'
-  children:
-  - title: Git Repository CDN
-    path: /
-  - title: Imgpx
-    path: /imgpx
-  - title: Favicons
-    path: /favicons
-  - title: Screenshot
-    path: /screenshot
+list:
 
-- title: Documentation
-  description: Go to the documentation pages!
-  link: https://developers.marsble.com
+  - title: Features
+    description: The available CDN
+    path: '#'
+    list:
+      - title: Git Repository CDN
+        path: /
+      - title: Imgpx
+        path: /imgpx
+      - title: Favicons
+        path: /favicons
+      - title: Screenshot
+        path: /screenshot
+      - title: Test Disabled
 
-- title: Blog
-  description: Coming soon!
-  path: /blog
+  - title: Documentation
+    description: Go to the documentation pages!
+    link: https://developers.marsble.com
 
-- title: Network
-  description: Our network.
-  path: /network
+  - title: Blog
+    description: Coming soon!
+    path: /blog
 
-- title: GitHub
-  description: Fork the project!
-  link: https://github.com/marsble/statically
+  - title: Network
+    description: Our network.
+    path: /network
+
+  - title: GitHub
+    description: Fork the project!
+    link: https://github.com/marsble/statically

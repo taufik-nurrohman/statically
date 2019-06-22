@@ -1,6 +1,6 @@
 {% include header.html %}
 
-{% include {{page.layout_data.action}}.html %}
+{% include {{ page.layout_data.header }}.html %}
 
 {% if page.layout_data.features %}
 <section class="features">
@@ -11,11 +11,11 @@
         <div class="features-item mx-auto mb-5 mb-lg-0 mb-lg-3">
           <div class="d-flex">
             {% if feature.image %}
-            <img alt="" class="icon mx-auto mb-4" src="{{ site.url }}{{ feature.image }}?v={{ site.version }}">
+            <img alt="" class="icon mx-auto mb-4" src="{{ feature.image | prepend: site.url }}?v={{ site.version }}">
             {% elsif feature.icon %}
             <i class="icon mx-auto mb-4 fa fa-{{ feature.icon }}"></i>
             {% else %}
-            <!-- no icon -->
+            <!-- void -->
             {% endif %}
           </div>
           <h3>{{ feature.title }}</h3>
@@ -27,5 +27,7 @@
   </div>
 </section>
 {% endif %}
+
+<main class="contents">{{ content }}</main>
 
 {% include footer.html %}
