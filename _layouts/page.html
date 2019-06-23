@@ -1,14 +1,5 @@
 {% include header.html %}
-<header class="master">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-9 mx-auto">
-        <h1>{% include v.html k='title' %}</h1>
-        <p class="lead mx-auto max-width">{% include v.html k='description' %}</p>
-      </div>
-    </div>
-  </div>
-</header>
+{% include master.html %}
 <main>
   <article class="mx-auto max-width">{{ content }}</article>
 </main>

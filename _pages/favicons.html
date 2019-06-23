@@ -2,21 +2,17 @@
 title: 'Free Favicon API'
 description: 'Easy to get favicon from a domain!'
 js: |
-  STATICALLY_PASTE_DATA['https?:\\/\\/([^\\/\\s]+).*'] = ($0, $1) => {
-      return 'https://cdn.statically.io/favicons/' + $1;
-  };
+  STATICALLY_PASTE_DATA['https?:\\/\\/([^\\/\\s]+).*'] = 'https://cdn.statically.io/favicons/$1';
 permalink: /favicons
 layout: home
 layout_data:
-  header: form/paste
+  header: paste
   header_data:
     placeholder: ['Paste a web-page URL here&hellip;', ""]
   skin:
     body: ['#8e55cb', '#fff']
 ---
 
-<main class="contents">
-  <article class="mx-auto max-width">
-    <p>Lorem ipsum dolor sit amet.</p>
-  </article>
-</main>
+<article class="mx-auto max-width">
+  <p>Lorem ipsum dolor sit amet.</p>
+</article>

@@ -1,14 +1,18 @@
 ---
 title: 'Screenshot API'
 description: 'Screenshot as a service.'
+js: |
+  STATICALLY_PASTE_DATA['https?:\\/\\/(\\S+)'] = 'https://cdn.statically.io/screenshot/$1';
 permalink: /screenshot
 layout: home
 layout_data:
-  header: form/paste
+  header: paste
   header_data:
     placeholder: ['Paste a web-page URL here&hellip;', ""]
   skin:
     body: ['#34af31', '#fff']
 ---
 
-<p>Lorem ipsum dolor sit amet.</p>
+<article class="mx-auto max-width">
+  <p>Lorem ipsum dolor sit amet.</p>
+</article>

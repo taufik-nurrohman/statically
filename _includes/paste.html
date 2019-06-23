@@ -1,0 +1,24 @@
+<header class="master">
+  <div class="overlay"><div></div></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1>{% include v.html k='title' %}</h1>
+        <p class="lead mx-auto max-width">{% include v.html k='description' %}</p>
+      </div>
+      <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+        <form>
+          <p>
+            <input type="text" class="form-control form-control-lg text-center" placeholder="{{page.layout_data.header_data.placeholder[0]}}" id="input">
+          </p>
+          <p style="display: none;">
+            <label class="d-block mt-4">Use this URL in production:</label>
+            <input type="text" class="form-control text-center" placeholder="{{page.layout_data.header_data.placeholder[1]}}" id="output">
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <pre class="mx-auto max-width" id="debug" style="display: none;"><code></code></pre>
+  <script src="{{ site.url }}/static/js/statically/paste.js"></script>
+</header>

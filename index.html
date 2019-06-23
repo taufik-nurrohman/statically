@@ -3,13 +3,65 @@ title: 'A free multi-CDN for open source project, WordPress, images and more!'
 description: 'Statically is a free multi-CDN for open source project, WordPress, images and other assets with high-performance of caching and optimization.'
 js: |
   Object.assign(STATICALLY_PASTE_DATA, {
-      'https?\\/\\/github url etc': 'replacement',
-      'https?\\/\\/gitlab url etc': 'replacement',
-      'https?\\/\\/bitbucket url etc': 'replacement'
+      'https?:\\/\\/raw\\.github(?:usercontent)?\\.com\\/([^\\/]+)\\/([^\\/]+)\\/([^\\/]+)\\/(.+)': 'https://cdn.statically.io/gh/$1/$2/$3/$4',
+      'https?:\\/\\/github\\.com\\/([^\\/]+)\\/([^\\/]+)\\/(?!releases\\/)(?:(?:blob|raw)\\/)?([^\\/]+)\\/(.+)': function(m0, m1, m2, m3, m4) {
+          if (m3 === 'master') {
+              fetch('https://api.github.com/repos/' + m1 + '/' + m2 + '/commits/' + m3).then(response => {
+                  if (!response.ok) {
+                      console.error('Failed to fetch latest repository commit from GitHub API.');
+                      return;
+                  }
+                  return response.json();
+              }).then(json => {
+                  let ref = json && json.sha ? json.sha.slice(0, 8) : m3;
+                  document.querySelector('#output').value = 'https://cdn.statically.io/gh/' + m1 + '/' + m2 + '/' + ref + '/' + m4;
+              });
+          }
+          return 'https://cdn.statically.io/gh/' + m1 + '/' + m2 + '/' + m3 + '/' + m4;
+      },
+      'https?:\\/\\/gist\\.github\\.com\\/.+?\\/([a-f\\d]+)(?:\\/([a-f\\d]+))?': function(m0, m1, m2) {
+          // TODO
+          /*
+          let matches = url.match(REGEX_GIST_URL);
+
+          let apiUrl = GITHUB_API_URL + '/gists/' + matches[1]
+            + (matches[2] ? '/' + matches[2] : '');
+
+          return fetch(apiUrl)
+            .then(res => {
+              if (!res.ok) {
+                setInvalid();
+                throw new Error('Failed to fetch gist URL from GitHub API');
+              }
+
+              return res.json();
+            })
+
+            .then(data => {
+              let files     = data && data.files;
+              let filenames = files && Object.keys(data.files);
+
+              if (!filenames || !filenames.length) {
+                return void setInvalid();
+              }
+
+              let rawUrl = files[filenames[0]] && files[filenames[0]].raw_url;
+
+              if (rawUrl) {
+                formatRawGistUrl(rawUrl);
+              } else {
+                setInvalid();
+              }
+          });
+          */
+      },
+      'https?:\\/\\/gist\\.github(?:usercontent)\\.com\\/(.+?\\/[a-f\\d]+\\/raw\\/(?:[a-f\\d]+\\/)?.+\\..+)': 'https://cdn.statically.io/gist/$1',
+      'https?:\\/\\/gitlab\\.com\\/([^\\/]+\\/[^\\/]+)\\/(?:raw|blob)\\/(.+\\..+?)(?:\\?.*)?': 'https://cdn.statically.io/gl/$1/$2',
+      'https?:\\/\\/bitbucket\\.org\\/([^\\/]+\\/[^\\/]+)\\/(?:raw|src)\\/(.+\\..+?)(?:\\?.*)?': 'https://cdn.statically.io/bb/$1/$2'
   });
 layout: home
 layout_data:
-  header: form/paste
+  header: paste
   header_data:
     placeholder: ['Paste a GitHub, GitLab or Bitbucket URL here&hellip;', ""]
   skin:
@@ -25,3 +77,24 @@ layout_data:
       description: 'Files are cached in the browser for 1 year. Learn more about <a href="/network#cache">cache behavior</a>.'
       image: /static/png/seo-and-web.png
 ---
+
+<div class="container-fluid p-0">
+  <div class="row no-gutters">
+    <div class="col-lg-6 order-lg-2" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+    <div class="col-lg-6 order-lg-1 my-auto">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-lg-6" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+    <div class="col-lg-6 my-auto">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-lg-6 order-lg-2" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+    <div class="col-lg-6 order-lg-1 my-auto">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,12 @@
 ---
 title: 'Imgpx'
 description: 'An image accelerator and manipulator service via custom endpoints.'
+js: |
+  STATICALLY_PASTE_DATA['https?:\\/\\/([^\\/\\s]+).*'] = 'https://cdn.statically.io/img/$1';
 permalink: /imgpx
 layout: home
 layout_data:
-  header: form/paste
+  header: paste
   header_data:
     placeholder: ['Paste an image URL here&hellip;', ""]
   skin:
@@ -21,19 +23,17 @@ layout_data:
       # image: /static/png/seo-and-web.png
 ---
 
-<main>
-  <article class="mx-auto max-width">
-    <h2>Introduction</h2>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <h2>Image Comparison</h2>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <h2>Docs</h2>
-    <h3>Usage</h3>
-    <p>Simple usage of Imgpx.</p>
-    <h3>Example</h3>
-    <p>Code example goes here.</p>
-    <h3>Result</h3>
-    <p>Image goes here.</p>
-    <p><a class="btn" href="">Read the Docs</a></p>
-  </article>
-</main>
+<article class="mx-auto max-width">
+  <h2>Introduction</h2>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <h2>Image Comparison</h2>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <h2>Docs</h2>
+  <h3>Usage</h3>
+  <p>Simple usage of Imgpx.</p>
+  <h3>Example</h3>
+  <p>Code example goes here.</p>
+  <h3>Result</h3>
+  <p>Image goes here.</p>
+  <p><a class="btn" href="">Read the Docs</a></p>
+</article>

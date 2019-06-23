@@ -80,7 +80,6 @@ h6 {
 
 .master .form-control:focus {
   border-color: inherit;
-  text-align: left !important;
   transition: none;
 }
 
@@ -203,4 +202,16 @@ h6 {
     padding-right: 2rem;
     padding-left: 2rem;
   }
+}
+
+#debug {
+  background: #000;
+  color: #fff;
+  margin: 4rem auto 0;
+  padding: 1rem;
+  font-size: 80%;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  border-radius: .25em;
 }

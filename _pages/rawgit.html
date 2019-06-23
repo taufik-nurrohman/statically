@@ -1,0 +1,21 @@
+---
+title: 'Migrating from RawGit'
+description: 'RawGit is now in a sunset phase and will soon shut down.'
+js: |
+  STATICALLY_PASTE_DATA['https?:\\/\\/(?:cdn\\.)?rawgit(?:hub)?\\.com\\/(\\S+)'] = 'https://cdn.statically.io/gh/$1';
+permalink: /rawgit
+layout: home
+layout_data:
+  header: paste
+  header_data:
+    placeholder: ['Paste your RawGit URL here&hellip;', ""]
+  skin:
+    body: ['#fd561e', '#fff']
+---
+
+<article class="mx-auto max-width">
+  <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hi! RawGit is shutting down. <br><br>Repos that served content through RawGit within the last month will continue to be served until 2019, but should migrate away as soon as possible. URLs for other repos are no longer being served.<br><br>More details: <a href="https://t.co/CeGyg052Q9">https://t.co/CeGyg052Q9</a></p>&mdash; RawGit (@rawgit) <a href="https://twitter.com/rawgit/status/1049360165030567937?ref_src=twsrc%5Etfw">October 8, 2018</a></blockquote>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <p>To migrate from <strong>Rawgit</strong> to <strong>Statically</strong>,
+replace <code>https://cdn.rawgit.com/</code> with <code>https://cdn.statically.io/gh/</code> or simply paste your old <strong>RawGit</strong> URL to the form above to generate the <strong>Statically</strong> URL version.</p>
+</article>

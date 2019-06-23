@@ -19,6 +19,7 @@ defaults:
       description: 'Page description.'
       layout: page
       layout_data:
+        animation: true
         skin:
           # [background-color, color]
           body: ['#1a252f', '#fff']
