@@ -26,7 +26,22 @@ defaults:
           # [a, a:hover, a:active]
           a: ['rgba(255, 255, 255, .6)', 'rgba(255, 255, 255, .8)']
           # [button, button:hover, button:active]
-          button: ['rgba(255, 255, 255, .1)', 'rgba(255, 255, 255, .2)']
+          button: ['rgba(255, 255, 255, .1)', 'rgba(255, 255, 255, .15)', 'rgba(255, 255, 255, .12)']
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-minifier
+
+# Plugin settings
+kramdown:
+  input: GFM
+  hard_wrap: false
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
 
 # Include to public directory
 include:

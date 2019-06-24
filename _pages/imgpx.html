@@ -2,7 +2,7 @@
 title: 'Imgpx'
 description: 'An image accelerator and manipulator service via custom endpoints.'
 js: |
-  STATICALLY_PASTE_DATA['https?:\\/\\/([^\\/\\s]+).*'] = 'https://cdn.statically.io/img/$1';
+  STATICALLY_PASTE_DATA['https?:\\/\\/([^?&#]+)'] = 'https://cdn.statically.io/img/$1';
 permalink: /imgpx
 layout: home
 layout_data:
