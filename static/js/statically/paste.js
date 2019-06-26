@@ -32,6 +32,10 @@
             let tasks = win.STATICALLY_PASTE_DATA, r;
             for (let i in tasks) {
                 if (this.value.match(r = new RegExp('^' + i + '$'))) {
+                    if (typeof tasks[i] === "function") {
+                        tasks[i].input = input;
+                        tasks[i].output = output;
+                    }
                     setValue(this.value.replace(r, tasks[i]));
                     return;
                 }
@@ -75,6 +79,7 @@
     }
 
     input.addEventListener("blur", paste, false);
+    input.addEventListener("cut", paste, false);
     input.addEventListener("paste", paste, false);
 
 })(window, document);
