@@ -41,6 +41,23 @@
       }
       {% endif %}
     {% endif %}
+    {% if page.layout_data.skin.button %}
+      {% if page.layout_data.skin.button[0] %}
+      .btn {
+        background: {{ page.layout_data.skin.button[0] }};
+      }
+      {% endif %}
+      {% if page.layout_data.skin.button[1] %}
+      .btn:focus, .btn:hover {
+        background: {{ page.layout_data.skin.button[1] }};
+      }
+      {% endif %}
+      {% if page.layout_data.skin.button[2] %}
+      .btn:active {
+        background: {{ page.layout_data.skin.button[2] }};
+      }
+      {% endif %}
+    {% endif %}
     </style>
     {% endif %}
 

@@ -23,5 +23,5 @@
   description: 'Tired of making screenshots manually? Don&rsquo;t like inconsistent results? Just paste a web-page URL you want to capture and then the web-page screenshot will be created automatically!'
   image: 'https://images.unsplash.com/photo-1547658718-1cdaa0852790?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80'
   button:
-    title: 'Capture your web-page now!'
+    title: 'Capture your web-page!'
     path: '/screenshot'

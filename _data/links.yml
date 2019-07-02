@@ -1,0 +1,15 @@
+- title: About
+  description: About this site.
+  path: /about
+
+- title: Contact
+  path: /contact
+
+- title: Term of Use
+  path: /term-of-use
+
+- title: Privacy Policy
+  path: /privacy
+
+- title: Credits
+  path: /credits

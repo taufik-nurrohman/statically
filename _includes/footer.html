@@ -1,45 +1,47 @@
     <footer class="footer">
       <div class="container">
         <div class="row">
+          {% if site.data.links %}
           <div class="col-lg-6 text-center text-lg-left my-auto">
             <ul class="list-inline mb-2">
-              <li class="list-inline-item">
-                <a href="#">About</a>
+              {% for link in site.data.links %}
+              <li class="list-inline-item mr-3">
+                {% if link.link %}
+                <a href="{{ link.link }}" title="{{ link.description }}" target="_blank">{{ link.title }}</a>
+                {% elsif link.path %}
+                <a href="{{ link.path | prepend: site.url }}" title="{{ link.description }}" target="_blank">{{ link.title }}</a>
+                {% else %}
+                <span title="{{ link.description }}">{{ link.title }}</span>
+                {% endif %}
               </li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Credits</a>
-              </li>
+              {% endfor %}
             </ul>
             <p class="copyright small mb-4 mb-lg-0">&copy; {{ site.title }} {{ 'now' | date: '%Y' }}. All rights reserved.</p>
           </div>
+          {% endif %}
+          {% if site.data.socials %}
           <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
             <ul class="list-inline mb-0">
+              {% for social in site.data.socials %}
               <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fab fa-facebook fa-2x fa-fw"></i>
+                {% if social.link %}
+                <a href="{{ social.link }}" title="{{ social.title | default: social.description }}" target="_blank">
+                  <i class="fab fa-{{ social.icon }} fa-2x fa-fw"></i>
                 </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                {% elsif social.path %}
+                <a href="{{ social.path | prepend: site.url }}" title="{{ social.title | default: social.description }}">
+                  <i class="fab fa-{{ social.icon }} fa-2x fa-fw"></i>
                 </a>
+                {% else %}
+                <span title="{{ social.title | default: social.description }}">
+                  <i class="fab fa-{{ social.icon }} fa-2x fa-fw"></i>
+                </span>
+                {% endif %}
               </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-instagram fa-2x fa-fw"></i>
-                </a>
-              </li>
+              {% endfor %}
             </ul>
           </div>
+          {% endif %}
         </div>
       </div>
     </footer>
