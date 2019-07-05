@@ -25,23 +25,20 @@
     };
 
     let input = doc.querySelector('#input'),
-        output = doc.querySelector('#output');
+        output = doc.querySelector('#output'), debounce;
 
     function paste(e) {
-        setTimeout(() => {
+        debounce && clearTimeout(debounce);
+        debounce = setTimeout(() => {
             let tasks = win.STATICALLY_PASTE_DATA, r;
             for (let i in tasks) {
                 if (this.value.match(r = new RegExp('^' + i + '$'))) {
-                    if (typeof tasks[i] === "function") {
-                        tasks[i].input = input;
-                        tasks[i].output = output;
-                    }
                     setValue(this.value.replace(r, tasks[i]));
                     return;
                 }
             }
             this.value && setError() || setDefault();
-        }, 1);
+        }, 500);
     }
 
     function setError() {
@@ -54,7 +51,7 @@
         input.classList.add('success');
         output.readonly = false;
         if (typeof jQuery !== "undefined") {
-            jQuery(output.parentNode).fadeIn();
+            jQuery(output.parentNode).stop(true, true).fadeIn();
         } else {
             output.parentNode.style.display = 'block';
         }
@@ -67,7 +64,7 @@
         input.classList.remove('error');
         input.classList.remove('success');
         if (typeof jQuery !== "undefined") {
-            jQuery(output.parentNode).fadeOut();
+            jQuery(output.parentNode).stop(true, true).fadeOut();
         } else {
             output.parentNode.style.display = 'none';
         }
@@ -78,8 +75,21 @@
         setSuccess();
     }
 
+    win.STATICALLY_PASTE_TOOLS = {
+        setError: setError,
+        setSuccess: setSuccess,
+        setDefault: setDefault,
+        setValue: setValue
+    };
+
     input.addEventListener("blur", paste, false);
     input.addEventListener("cut", paste, false);
+    // input.addEventListener("keyup", paste, false);
     input.addEventListener("paste", paste, false);
+
+    output.addEventListener("focus", () => {
+        output.focus();
+        output.select();
+    }, false);
 
 })(window, document);

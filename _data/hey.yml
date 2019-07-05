@@ -1,0 +1,9 @@
+- title: 'Read more&hellip;'
+  description: 'First message goes here.'
+  link: 'http://example.com'
+  type: 'info'
+
+- description: 'Second message goes here.'
+  type: 'success'
+
+- description: "" # Just blank the `description` field to hide the message

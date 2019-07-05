@@ -18,9 +18,9 @@ list:
     description: Go to the documentation pages!
     link: https://developers.marsble.com
 
-  - title: Blog
-    description: Coming soon!
-    path: /blog
+#  - title: Blog
+#    description: Coming soon!
+#    path: /blog
 
   - title: Network
     description: Our network.

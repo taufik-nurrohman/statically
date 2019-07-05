@@ -1,0 +1,7 @@
+{% for message in site.data.hey %}
+  {% if message.description and message.description != "" %}
+  <div class="alert alert-{{ message.type | default: 'info' }}">
+    <p>{{ message.description }}{% if message.title and message.link %} <a class="ml-2" href="{{ message.link }}" target="_blank">{{ message.title }}</a>{% endif %}</p>
+  </div>
+  {% endif %}
+{% endfor %}

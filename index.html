@@ -2,62 +2,38 @@
 title: 'A free multi-CDN for open source project, WordPress, images and more!'
 description: 'Statically is a free multi-CDN for open source project, WordPress, images and other assets with high-performance of caching and optimization.'
 js: |
-  Object.assign(STATICALLY_PASTE_DATA, {
+  $.extend(STATICALLY_PASTE_DATA, {
       'https?:\\/\\/raw\\.github(?:usercontent)?\\.com\\/([^\\/]+)\\/([^\\/]+)\\/([^\\/]+)\\/(.+)': 'https://cdn.statically.io/gh/$1/$2/$3/$4',
       'https?:\\/\\/github\\.com\\/([^\\/]+)\\/([^\\/]+)\\/(?!releases\\/)(?:(?:blob|raw)\\/)?([^\\/]+)\\/(.+)': function(m0, m1, m2, m3, m4) {
-          var input = this.input,
-              output = this.output;
           if (m3 === 'master') {
-              fetch('https://api.github.com/repos/' + m1 + '/' + m2 + '/commits/' + m3).then(response => {
-                  if (!response.ok) {
-                      console.error('Failed to fetch latest repository commit from GitHub API.');
-                      return;
+              $.get('https://api.github.com/repos/' + m1 + '/' + m2 + '/commits/' + m3, response => {
+                  var hash = response.sha && response.sha.slice(0, 8);
+                  if (hash) {
+                      STATICALLY_PASTE_TOOLS.setValue('https://cdn.statically.io/gh/' + m1 + '/' + m2 + '/' + hash + '/' + m4);
+                  } else {
+                      STATICALLY_PASTE_TOOLS.setError();
                   }
-                  return response.json();
-              }).then(json => {
-                  let ref = json && json.sha ? json.sha.slice(0, 8) : m3;
-                  output.value = 'https://cdn.statically.io/gh/' + m1 + '/' + m2 + '/' + ref + '/' + m4;
-              });
+              }, 'json');
+              return 'Fetching URL\u2026';
           }
           return 'https://cdn.statically.io/gh/' + m1 + '/' + m2 + '/' + m3 + '/' + m4;
       },
-      'https?:\\/\\/gist\\.github\\.com\\/.+?\\/([a-f\\d]+)(?:\\/([a-f\\d]+))?': function(m0, m1, m2) {
-          // TODO
-          /*
-          let matches = url.match(REGEX_GIST_URL);
-
-          let apiUrl = GITHUB_API_URL + '/gists/' + matches[1]
-            + (matches[2] ? '/' + matches[2] : '');
-
-          return fetch(apiUrl)
-            .then(res => {
-              if (!res.ok) {
-                setInvalid();
-                throw new Error('Failed to fetch gist URL from GitHub API');
-              }
-
-              return res.json();
-            })
-
-            .then(data => {
-              let files     = data && data.files;
-              let filenames = files && Object.keys(data.files);
-
-              if (!filenames || !filenames.length) {
-                return void setInvalid();
-              }
-
-              let rawUrl = files[filenames[0]] && files[filenames[0]].raw_url;
-
-              if (rawUrl) {
-                formatRawGistUrl(rawUrl);
+      'https?:\\/\\/gist\\.github\\.com\\/([^\\/\\s]+)\\/([^?&#]+)': function(m0, m1, m2) {
+          $.get('https://api.github.com/gists/' + m2, response => {
+              var files = response.files,
+                  f = Object.keys(files),
+                  link = files[f[0]] && files[f[0]].raw_url;
+              if (link) {
+                  STATICALLY_PASTE_TOOLS.setValue(link.replace(new RegExp('^https?:\\/\\/gist\\.githubusercontent\\.com\\/(\\S+)$'), (m0, m1) => {
+                      return 'https://cdn.statically.io/gist/' + m1;
+                  }));
               } else {
-                setInvalid();
+                  STATICALLY_PASTE_TOOLS.setError();
               }
-          });
-          */
+          }, 'json');
+          return 'Fetching URL\u2026';
       },
-      'https?:\\/\\/gist\\.github(?:usercontent)\\.com\\/(.+?\\/[a-f\\d]+\\/raw\\/(?:[a-f\\d]+\\/)?.+\\..+)': 'https://cdn.statically.io/gist/$1',
+      'https?:\\/\\/gist\\.githubusercontent\\.com\\/(\\S+)': 'https://cdn.statically.io/gist/$1',
       'https?:\\/\\/gitlab\\.com\\/([^\\/]+\\/[^\\/]+)\\/(?:raw|blob)\\/(.+\\..+?)(?:\\?.*)?': 'https://cdn.statically.io/gl/$1/$2',
       'https?:\\/\\/bitbucket\\.org\\/([^\\/]+\\/[^\\/]+)\\/(?:raw|src)\\/(.+\\..+?)(?:\\?.*)?': 'https://cdn.statically.io/bb/$1/$2'
   });
@@ -65,7 +41,7 @@ layout: home
 layout_data:
   header: paste
   header_data:
-    placeholder: ['Paste a GitHub, GitLab or Bitbucket URL here&hellip;', ""]
+    placeholder: ['Paste a GitHub, GitLab, Bitbucket file or gist URL here&hellip;', ""]
   skin:
     body: ['#ed2f3c', '#fff']
     button: ['#2271a9', '#277cb4', '#1f6798']
