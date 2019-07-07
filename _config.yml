@@ -9,6 +9,12 @@ direction: ltr
 charset: utf-8
 version: 2.0.0
 
+data_centers:
+  - Cloudflare
+  - Fastly
+  - CDN77
+  - BunnyCDN
+
 # Default field values for pages
 defaults:
   -

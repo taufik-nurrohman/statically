@@ -4,13 +4,13 @@ list:
     description: The available CDN
     path: '#'
     list:
-      - title: Git Repository CDN
+      - title: CDN Service for Git
         path: /
-      - title: Imgpx
+      - title: Remote Image Optimizer
         path: /imgpx
-      - title: Favicons
+      - title: Favicons Extractor
         path: /favicons
-      - title: Screenshot
+      - title: Web-Page Screenshot
         path: /screenshot
       - title: Test Disabled
 

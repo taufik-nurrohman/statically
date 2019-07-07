@@ -1,14 +1,10 @@
----
-title: 'Network'
-layout: page
----
-
-Statically is dedicated to running on multi-CDN like {% include every.html k='data_centers' %}.
+Statically is dedicated to running on multi-CDN like Cloudflare, Fastly, and CDN77 and BunnyCDN
+------------------
 
 ![Network Map](https://statically.io/static/images/features/statically_net.png)
 
 About Statically
-----------------
+---------------
 
 Learn more about Statically on [about page](https://statically.io/about).
 
