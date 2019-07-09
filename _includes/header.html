@@ -11,7 +11,7 @@
     <script>document.documentElement.className += ' js';</script>
 
     <link href="{{ site.url }}/favicon.ico" rel="shortcut icon">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300i,400i,700i|Source+Code+Pro:300,400,700,300i,400i,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,700,200i,300i,400i,700i|Titillium+Web:200,300,400,700,200i,300i,400i,700i|Roboto+Mono:300,400,700,300i,400i,700i" rel="stylesheet">
     <link href="{{ site.url }}/static/css/bootstrap.min.css?v={{ site.version }}" rel="stylesheet">
     <link href="{{ site.url }}/static/css/font-awesome.min.css?v={{ site.version }}" rel="stylesheet">
     <link href="{{ site.url }}/static/css/statically.css?v={{ site.version }}" rel="stylesheet">
@@ -26,17 +26,6 @@
     .alerts {
       background: {{ page.layout_data.skin.body[1] | default: '#000' }};
       color: {{ page.layout_data.skin.body[0] | default: '#fff' }};
-    }
-    .alerts a {
-      color: inherit !important;
-      opacity: .6;
-    }
-    .alerts a:focus,
-    .alerts a:hover {
-      opacity: .8;
-    }
-    .alerts a:active {
-      opacity: 1;
     }
     {% endif %}
     {% if page.layout_data.skin.a %}

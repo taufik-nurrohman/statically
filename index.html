@@ -1,6 +1,10 @@
 ---
 title: 'A free multi-CDN for open source project, WordPress, images and more!'
 description: 'Statically is a free multi-CDN for open source project, WordPress, images and other assets with high-performance of caching and optimization.'
+css: |
+  .contents {
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .3));
+  }
 js: |
   $.extend(STATICALLY_PASTE_DATA, {
       'https?:\\/\\/raw\\.github(?:usercontent)?\\.com\\/([^\\/]+)\\/([^\\/]+)\\/([^\\/]+)\\/(.+)': 'https://cdn.statically.io/gh/$1/$2/$3/$4',
@@ -57,7 +61,7 @@ layout_data:
       image: /static/png/seo-and-web.png
 ---
 
-<div class="container p-0">
+<div class="container p-0 pb-4">
   {% for feature in site.data._features %}
   <div class="row no-gutters">
     <div class="col-lg-6{% cycle ' order-lg-2', '' %}">

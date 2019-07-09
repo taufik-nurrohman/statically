@@ -1,26 +1,18 @@
 ---
-title: 'Network'
+title: 'Our Network'
+description: 'Lorem ipsum dolor sit amet.'
 layout: page
+layout_data:
+  animation: false
 ---
 
-Statically is dedicated to running on multi-CDN like {% include every.html k='data_centers' %}.
+<img alt="" src="https://statically.io/static/images/features/statically_net.png" style="width:100%;height:auto;">
 
-![Network Map](https://statically.io/static/images/features/statically_net.png)
+Statically is dedicated to running on multiple servers like {% include every.html k='data_centers' %}. It comes with a modern platform that is compatible with HTTP/2.0 and HTTPS. We will use _Brotli_ if your browser accepts it and we will send your request through the nearest data center.
 
-About Statically
-----------------
+We have 10 data centers located in strategic locations + {{ site.data_centers.size }} CDN providers that help with the performance of our platform.
 
-Learn more about Statically on [about page](https://statically.io/about).
-
-Performance
------------
-
-Yes, Statically comes with modern technologies, don't worry, we got all setup, our platform is fully compitable with **http2.0 and https**, we use **Brotli** if your browser is accept it, and we serves your request from nearest datacenter.
-
-Locations
----------
-
-We have **We have 10 strategically located data centers + 4 CDN providers** that help us improve the platform performance.
+_TODO_
 
 Statistics Usage
 ----------------
