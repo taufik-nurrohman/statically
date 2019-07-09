@@ -23,6 +23,21 @@
       background: {{ page.layout_data.skin.body[0] | default: '#fff' }};
       color: {{ page.layout_data.skin.body[1] | default: '#000' }};
     }
+    .alerts {
+      background: {{ page.layout_data.skin.body[1] | default: '#000' }};
+      color: {{ page.layout_data.skin.body[0] | default: '#fff' }};
+    }
+    .alerts a {
+      color: inherit !important;
+      opacity: .6;
+    }
+    .alerts a:focus,
+    .alerts a:hover {
+      opacity: .8;
+    }
+    .alerts a:active {
+      opacity: 1;
+    }
     {% endif %}
     {% if page.layout_data.skin.a %}
       {% if page.layout_data.skin.a[0] %}
@@ -70,4 +85,5 @@
   </head>
   <body>
 
+    {% include hey.html %}
     {% include nav.html %}

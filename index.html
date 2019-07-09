@@ -57,10 +57,12 @@ layout_data:
       image: /static/png/seo-and-web.png
 ---
 
-<div class="container-fluid p-0">
+<div class="container p-0">
   {% for feature in site.data._features %}
   <div class="row no-gutters">
-    <div class="col-lg-6{% cycle ' order-lg-2', '' %}" style="background-image: url('{{ feature.image }}');"></div>
+    <div class="col-lg-6{% cycle ' order-lg-2', '' %}">
+      <img alt="" src="{{ feature.image | prepend: site.url }}">
+    </div>
     <div class="col-lg-6{% cycle ' order-lg-1', '' %} my-auto">
       <h2>{{ feature.title }}</h2>
       <p>{{ feature.description }}</p>

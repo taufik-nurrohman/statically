@@ -29,9 +29,22 @@ h6 {
   box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
 }
 
-.contents > .container-fluid > .row > div {
-  background-size: cover;
-  padding: 4rem;
+.contents > .container > .row > div {
+  padding: 2rem;
+}
+
+.contents > .container > .row > div > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
 }
 
 .navbar-toggler {
@@ -47,14 +60,24 @@ h6 {
   margin: 0 0 0 -.5rem;
 }
 
-.alert {
-  position: relative;
-  z-index: 4;
+.alerts {
   background: rgba(0, 0, 0, .5);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+  position: relative;
+  z-index: 6;
+  text-align: center;
+}
+
+.alerts + .navbar {
+  top: 3rem;
+}
+
+.alert {
+  margin: 0;
+  background: none;
   color: inherit;
   border: 0;
   border-radius: 0;
-  margin: 0 .5rem .5rem;
 }
 
 .alert p {
@@ -79,11 +102,6 @@ h6 {
   border-top: 1px solid rgba(255, 255, 255, .05);
   padding-top: 1rem;
   margin-bottom: 4rem;
-}
-
-.navbar-is-solid .navbar {
-  background: inherit;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
 }
 
 .master .overlay {

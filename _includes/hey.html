@@ -1,3 +1,5 @@
+{% if site.data.hey.size > 0 %}
+<div class="alerts">
 {% for message in site.data.hey %}
   {% if message.description and message.description != "" %}
   <div class="alert alert-{{ message.type | default: 'info' }}">
@@ -5,3 +7,5 @@
   </div>
   {% endif %}
 {% endfor %}
+</div>
+{% endif %}

@@ -1,9 +1,4 @@
-- title: 'Read more&hellip;'
-  description: 'First message goes here.'
-  link: 'http://example.com'
+- title: '<i class="fa fa-arrow-right"></i>'
+  description: '<i class="fa fa-bullhorn mr-2"></i> 8 Awesome Features Of Statically Free CDN'
+  link: 'https://blog.runcloud.io/2019/04/14/staticaly.html?utm_source=statically&utm_medium=header&utm_campaign=announcement'
   type: 'info'
-
-- description: 'Second message goes here.'
-  type: 'success'
-
-- description: "" # Just blank the `description` field to hide the message
