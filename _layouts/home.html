@@ -8,7 +8,7 @@
     <div class="row">
       {% for feature in page.layout_data.features %}
       <div class="col-lg-4">
-        <div class="features-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+        <div class="features-item mx-auto">
           <div class="d-flex">
             {% if feature.image %}
             <img alt="" class="icon mx-auto mb-4" src="{{ feature.image | prepend: site.url }}?v={{ site.version }}">

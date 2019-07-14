@@ -1,10 +1,6 @@
 ---
 title: 'A free multi-CDN for open source project, WordPress, images and more!'
 description: 'Statically is a free multi-CDN for open source project, WordPress, images and other assets with high-performance of caching and optimization.'
-css: |
-  .contents {
-    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .3));
-  }
 js: |
   $.extend(STATICALLY_PASTE_DATA, {
       'https?:\\/\\/raw\\.github(?:usercontent)?\\.com\\/([^\\/]+)\\/([^\\/]+)\\/([^\\/]+)\\/(.+)': 'https://cdn.statically.io/gh/$1/$2/$3/$4',
@@ -52,13 +48,13 @@ layout_data:
   features:
     - title: 'For Developers'
       description: 'Load your project from GitHub, GitLab and Bitbucket easily!'
-      image: /static/png/laptop.png
+      image: '/static/png/Engineer-256.png'
     - title: 'Unlimited Traffics'
       description: 'No traffic limits or throttling. Files are served via <a href="/network">super fast global CDNs</a>.'
-      image: /static/png/traffic.png
+      image: '/static/png/Network-01-256.png'
     - title: 'Long Life Cache'
       description: 'Files are cached in the browser for 1 year. Learn more about <a href="/network#cache">cache behavior</a>.'
-      image: /static/png/seo-and-web.png
+      image: '/static/png/Clock-01-256.png'
 ---
 
 <div class="container p-0 pb-4">
@@ -82,4 +78,11 @@ layout_data:
     </div>
   </div>
   {% endfor %}
+</div>
+
+<div class="container-fluid sponsors">
+  <p>Statically wouldn&rsquo;t be the best free CDN without sponsorship from our partners.</p>
+  <div>
+    <a href="https://www.cdn77.com/" target="_blank"><img src="{{ site.url }}/static/png/sponsors/cdn77.png" alt="CDN77"></a> <a href="https://bunnycdn.com/" target="_blank"><img src="{{ site.url }}/static/png/sponsors/bunnycdn.png" alt="BunnyCDN"></a> <a href="https://www.fastly.com/" target="_blank"><img src="{{ site.url }}/static/png/sponsors/fastly.png" alt="Fastly"></a> <a href="https://www.cloudflare.com/" target="_blank"><img src="{{ site.url }}/static/png/sponsors/cloudflare.png" alt="CloudFlare"></a>
+  </div>
 </div>

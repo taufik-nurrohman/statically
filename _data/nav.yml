@@ -1,19 +1,5 @@
 list:
 
-  - title: Features
-    description: The available CDN
-    path: '#'
-    list:
-      - title: CDN Service for Git
-        path: /
-      - title: Remote Image Optimizer
-        path: /imgpx
-      - title: Favicons Extractor
-        path: /favicons
-      - title: Web-Page Screenshot
-        path: /screenshot
-      - title: Test Disabled
-
   - title: Documentation
     description: Go to the documentation pages!
     link: https://developers.marsble.com
@@ -21,6 +7,10 @@ list:
 #  - title: Blog
 #    description: Coming soon!
 #    path: /blog
+
+  - title: Donate
+    description: Keep thi site up!
+    path: /donate
 
   - title: Network
     description: Our network.

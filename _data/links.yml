@@ -1,7 +1,3 @@
-- title: About
-  description: About this site.
-  path: /about
-
 - title: Contact
   path: /contact
 

@@ -63,7 +63,7 @@ h6 {
 
 .alerts {
   background: rgba(0, 0, 0, .5);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+  box-shadow: 0 0 1px rgba(0, 0, 0, .25);
   position: relative;
   z-index: 6;
   text-align: center;
@@ -183,18 +183,18 @@ h6 {
 
 .features .icon {
   display: block;
-  width: 40%;
+  width: 30%;
   height: auto;
 }
 
 .features .features-item .icon.fa {
-  width: 7rem;
-  height: 7rem;
-  line-height: 7rem;
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
 }
 
 .features .features-item .icon.fa {
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 .features .features-item:hover .fa {
@@ -209,6 +209,23 @@ h6 {
   background: none;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.sponsors {
+  background: rgba(0, 0, 0, .25);
+  border-top: 1px solid rgba(0, 0, 0, .125);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.sponsors > div a {
+  margin: 0 1rem;
+}
+
+.sponsors > div a,
+.sponsors > div img {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .footer {

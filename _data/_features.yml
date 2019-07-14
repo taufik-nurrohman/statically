@@ -12,7 +12,7 @@
     title: 'Use Imgpx service!'
     path: '/imgpx'
 
-- title: 'Favicons API'
+- title: 'Get any site&rsquo;s favicon image.'
   description: 'The fastest way to load favicon images from external websites automatically!'
   image: '/static/svg/social-dashboard.svg'
   button:
