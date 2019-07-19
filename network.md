@@ -2,31 +2,51 @@
 title: 'Our Network'
 description: 'Lorem ipsum dolor sit amet.'
 layout: page
+css: |
+  #network-graph {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0 0 5%;
+    background: #009;
+  }
+  #network-graph > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    padding: 1em 1.25em; /* contoh */
+  }
 layout_data:
   animation: false
 ---
 
-<img alt="" src="https://statically.io/static/images/features/statically_net.png" style="width:100%;height:auto;">
+<div id="network-graph">
+  <div>Sisipkan grafik di sini&hellip;</div>
+</div>
 
 Statically is dedicated to running on multiple servers like {% include every.html k='data_centers' %}. It comes with a modern platform that is compatible with HTTP/2.0 and HTTPS. We will use _Brotli_ if your browser accepts it and we will send your request through the nearest data center.
 
 We have 10 data centers located in strategic locations + {{ site.data_centers.size }} CDN providers that help with the performance of our platform.
 
-_TODO_
-
 Statistics Usage
 ----------------
 
-Wondering about Statically stats? Visit [our statistics page](https://statically.io/stats)
+Visit [our statistics page](https://statically.io/stats).
 
 Supported Providers
 -------------------
 
-Statically can serves **raw files** with proper Content-Type headers and make it more fast for you from these providers:
+Statically can serves **raw files** with proper `Content-Type` headers and makes it faster for you from these providers:
 
-**GitHub \| GitLab \| Bitbucket \| WordPress SVN**
+ - GitHub
+ - GitLab
+ - Bitbucket
+ - WordPress SVN
 
-You may interested in our other features, please [learn more here](https://statically.io/about).
+[Check out the other features here](https://statically.io/about).
 
 ## Cache Behavior
 
@@ -55,4 +75,4 @@ There are two versions of Statically: **Production and Development**. Below you 
 
 ## Uptime
 
-We keep users away from all downtime, we apply failover to each of our systems, for more information about Network Status, please check it in our [status page](https://status.marsble.com).
+We keep users away from all downtime, we apply failover to each of our systems, for more information about network status, please check it in our [status page](https://status.marsble.com).

@@ -2,7 +2,7 @@ title: 'Statically'
 slogan: 'A free multi-CDN for open source project, WordPress, images and more!'
 description: 'Statically is a free multi-CDN for open source project, WordPress, images and other assets with high-performance of caching and optimization.'
 permalink: /:title/
-url: 'file:///F:/GitHub/tovic/statically/_site' # 'https://statically.io'
+url: 'http://127.0.0.1/statically/_site' # 'https://statically.io'
 
 language: en
 direction: ltr
