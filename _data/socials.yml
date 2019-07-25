@@ -1,11 +1,11 @@
 - title: Facebook
-  link: '/'
+  link: '#'
   icon: facebook
 
 - title: Twitter
-  link: '/'
+  link: 'https://twitter.com/staticallyio'
   icon: twitter
 
-- title: Instagram
-  link: '/'
-  icon: instagram
+- title: GitHub
+  link: 'https://github.com/marsble/statically'
+  icon: github

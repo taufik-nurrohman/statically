@@ -169,7 +169,7 @@ h6 {
 .features {
   background: rgba(0, 0, 0, .125);
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
   text-align: center;
 }
 
@@ -179,6 +179,7 @@ h6 {
 
 .features .features-item {
   max-width: 20rem;
+  margin-bottom: 1rem;
 }
 
 .features .icon {
@@ -213,13 +214,13 @@ h6 {
 
 .sponsors {
   background: rgba(0, 0, 0, .25);
-  border-bottom: 1px solid rgba(0, 0, 0, .125);
-  padding: 3rem 0;
+  border-top: 1px solid rgba(0, 0, 0, .125);
+  padding: 1.5rem 0 2rem;
   text-align: center;
 }
 
 .sponsors > div a {
-  margin: 0 1rem;
+  margin: 0 .5rem;
 }
 
 .sponsors > div a,
@@ -243,6 +244,14 @@ h6 {
     max-width: 100%;
     padding-right: 2rem;
     padding-left: 2rem;
+  }
+  .features {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  .footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
 

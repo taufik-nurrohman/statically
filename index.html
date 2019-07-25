@@ -80,9 +80,13 @@ layout_data:
   {% endfor %}
 </div>
 
+{% if site.data.sponsors %}
 <div class="container-fluid sponsors">
   <p>Statically wouldn&rsquo;t be the best free CDN without sponsorship from our partners.</p>
   <div>
-    <a href="https://www.cdn77.com/" target="_blank"><img src="{{ site.url }}/static/png/sponsors/cdn77.png" alt="CDN77"></a> <a href="https://bunnycdn.com/" target="_blank"><img src="{{ site.url }}/static/png/sponsors/bunnycdn.png" alt="BunnyCDN"></a> <a href="https://www.fastly.com/" target="_blank"><img src="{{ site.url }}/static/png/sponsors/fastly.png" alt="Fastly"></a> <a href="https://www.cloudflare.com/" target="_blank"><img src="{{ site.url }}/static/png/sponsors/cloudflare.png" alt="CloudFlare"></a>
+    {% for sponsor in site.data.sponsors %}
+    <a href="{{ sponsor.link }}" title="{{ sponsor.title }}" target="_blank"><img src="{{ sponsor.image | prepend: site.url }}" alt="{{ sponsor.description | default: sponsor.title }}"></a>
+    {% endfor %}
   </div>
 </div>
+{% endif %}

@@ -1,11 +1,17 @@
-- title: Contact
-  path: /contact
+- title: 'Contact'
+  path: '/contact'
 
-- title: Term of Use
-  path: /term-of-use
+- title: 'Term of Use'
+  path: '/term-of-use'
 
-- title: Privacy Policy
-  path: /privacy
+- title: 'Privacy Policy'
+  path: '/privacy'
 
-- title: Credits
-  path: /credits
+- title: 'Credits'
+  path: '/credits'
+
+- title: 'Marsble'
+  link: 'https://marsble.com'
+
+- title: 'Status'
+  link: 'https://status.marsble.com'
