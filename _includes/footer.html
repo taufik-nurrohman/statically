@@ -1,11 +1,11 @@
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-sm-8">
-            <h4 class="text-white">About</h4>
-            <p>We are a group of people who have passion in the open source code community. Our goal for this service is to provide the greatest possible convenience to developers so that they don&rsquo;t have to set up a personal web server just to showcase their projects because we know the open source code is mostly built with a lack of financial support and is intended not to get any benefit financially. We want to keep it like that, so you can focus only on the development process.</p><p><a class="btn btn-sm" href="{{ site.url }}/about">Read more</a></p>
+          <div class="col-sm-8 text-center text-lg-left">
+            <h4>About</h4>
+            <p>We are a group of people who have passion in the open source code community. Our goal for this service is to provide the greatest possible convenience to developers so that they don&rsquo;t have to set up a personal web server just to showcase their projects online.</p><p><a class="btn btn-sm" href="{{ site.url }}/about">Read more</a></p>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-4 text-center text-lg-left">
             <h4>WordPress Plugin</h4>
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
@@ -14,7 +14,7 @@
       <div class="container mt-4">
         <div class="row">
           {% if site.data.links %}
-          <div class="col-lg-6 text-center text-lg-left my-auto">
+          <div class="col-sm-8 text-center text-lg-left">
             <ul class="list-inline mb-2">
               {% for link in site.data.links %}
               <li class="list-inline-item mr-3">
@@ -32,7 +32,7 @@
           </div>
           {% endif %}
           {% if site.data.socials %}
-          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <div class="col-sm-4 text-center text-lg-right">
             <ul class="list-inline mb-0">
               {% for social in site.data.socials %}
               <li class="list-inline-item mr-3">
