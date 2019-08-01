@@ -1,6 +1,12 @@
 ---
 title: 'Imgpx'
 description: 'An image accelerator and manipulator service via custom endpoints.'
+css: |
+  .row img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 js: |
   STATICALLY_PASTE_DATA['https?:\\/\\/([^?&#]+)\\.(gif|jpe?g|a?png|webp)([?&#].*)?'] = 'https://cdn.statically.io/img/$1.$2';
 layout: home
@@ -25,9 +31,22 @@ layout_data:
 
 <article class="mx-auto max-width">
   <h2>Introduction</h2>
-  <p>Lorem ipsum dolor sit amet.</p>
+  <p><strong>Imgpx</strong> is an external image loading accelerator service that works by passing the image data transfer through our CDN proxy.</p>
   <h2>Image Comparison</h2>
-  <p>Lorem ipsum dolor sit amet.</p>
+  <div class="row my-2">
+    <div class="col-lg-6">
+      <h3 class="h6">Without Imgpx</h3>
+      <p><img alt="" src="https://statically.io/static/images/misc/clouds.jpg"></p>
+      <pre><code>https://statically.io/static/images/misc/clouds.jpg</code></pre>
+      <p><strong>Size:</strong> 46.34 KB</p>
+    </div>
+    <div class="col-lg-6">
+      <h3 class="h6">With Imgpx</h3>
+      <p><img alt="" src="https://cdn.statically.io/img/statically.io/static/images/misc/clouds.jpg"></p>
+      <pre><code>https://cdn.statically.io/img/statically.io/static/images/misc/clouds.jpg</code></pre>
+      <p><strong>Size:</strong> 24.55 KB (50% compression)</p>
+    </div>
+  </div>
   <h2>Docs</h2>
   <h3>Usage</h3>
   <p>Simple usage of Imgpx.</p>
