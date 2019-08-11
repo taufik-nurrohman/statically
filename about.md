@@ -28,6 +28,13 @@ We are a group of people who have passion in the open source code community. Our
 
 ### Our Team
 
+Show all project leaders here, wanna join? [contact us!](https://statically.io/contact?subject=Join%20The%20Team)
+
+Maintainers:
+
+ - [fransallen](https://github.com/fransallen) (core team)
+ - [tovic](https://github.com/tovic) (core team)
+
 ### Our Network
 
 <div class="my-3" id="network-graph">

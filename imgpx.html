@@ -2,7 +2,7 @@
 title: 'Imgpx'
 description: 'An image accelerator and manipulator service via custom endpoints.'
 css: |
-  .row img {
+  article img {
     display: block;
     width: 100%;
     height: auto;
@@ -31,28 +31,29 @@ layout_data:
 
 <article class="mx-auto max-width">
   <h2>Introduction</h2>
-  <p><strong>Imgpx</strong> is an external image loading accelerator service that works by passing the image data transfer through our CDN proxy.</p>
-  <h2>Image Comparison</h2>
+  <p><strong>Imgpx</strong> is an external image loading accelerator service that works by passing the image data transfer through our CDN proxy. Also supports image cropping and image resizing as well. <a href="https://developers.marsble.com/docs/imgpx">Read more in the docs!</a></p>
   <div class="row my-2">
     <div class="col-lg-6">
-      <h3 class="h6">Without Imgpx</h3>
-      <p><img alt="" src="https://statically.io/static/images/misc/clouds.jpg"></p>
-      <pre><code>https://statically.io/static/images/misc/clouds.jpg</code></pre>
-      <p><strong>Size:</strong> 46.34 KB</p>
+      <h3 class="h4 mb-3">Usage</h3>
+      <p>Simple usage of Imgpx.</p>
+      <pre><code>https://cdn.statically.io/img/:image_url</code></pre>
+      <h3 class="h4 mb-3">Example</h3>
+      <pre><code>https://cdn.statically.io/img/statically.io/static/jpg/clouds.jpg</code></pre>
     </div>
     <div class="col-lg-6">
-      <h3 class="h6">With Imgpx</h3>
-      <p><img alt="" src="https://cdn.statically.io/img/statically.io/static/images/misc/clouds.jpg"></p>
-      <pre><code>https://cdn.statically.io/img/statically.io/static/images/misc/clouds.jpg</code></pre>
-      <p><strong>Size:</strong> 24.55 KB (50% compression)</p>
+      <h3 class="h4 mb-3">Result</h3>
+      <p><img alt="" src="https://cdn.statically.io/img/statically.io/static/jpg/clouds.jpg"></p>
     </div>
   </div>
-  <h2>Docs</h2>
-  <h3>Usage</h3>
-  <p>Simple usage of Imgpx.</p>
-  <h3>Example</h3>
-  <p>Code example goes here.</p>
-  <h3>Result</h3>
-  <p>Image goes here.</p>
-  <p><a class="btn" href="">Read the Docs</a></p>
+  <div class="row my-2">
+    <div class="col-lg-6">
+      <h3 class="h4 mb-3">Random</h3>
+      <p>Get random images with Imgpx.</p>
+      <pre><code>https://cdn.statically.io/img/random</code></pre>
+    </div>
+    <div class="col-lg-6">
+      <h3 class="h4 mb-3">Result</h3>
+      <p><img alt="" src="https://cdn.statically.io/img/statically.io/static/jpg/random.jpg"></p>
+    </div>
+  </div>
 </article>

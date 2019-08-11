@@ -28,6 +28,10 @@ pre {
   padding: .5em 1em;
 }
 
+pre code {
+  font-size: 85%;
+}
+
 .btn,
 .btn:focus,
 .btn:hover,

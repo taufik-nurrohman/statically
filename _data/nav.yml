@@ -14,7 +14,7 @@ list:
 
   - title: Network
     description: Our network.
-    path: /network
+    path: '/about#our-network'
 
   - title: GitHub
     description: Fork the project!
