@@ -19,3 +19,4 @@ layout_data:
 ### Icons
 
  - [Icon Fonts by Font Awesome](https://fontawesome.com)
+ - [Teaser Icon Fonts by Flaticons](https://flaticons.net)

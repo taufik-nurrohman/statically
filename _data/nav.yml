@@ -1,7 +1,7 @@
 list:
 
   - title: Documentation
-    description: Go to the documentation pages!
+    description: Go to the documentation site!
     link: https://developers.marsble.com
 
 #  - title: Blog
@@ -9,7 +9,7 @@ list:
 #    path: /blog
 
   - title: Donate
-    description: Keep thi site up!
+    description: Keep this site up!
     path: /donate
 
   - title: Network

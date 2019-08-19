@@ -24,7 +24,7 @@ layout_data:
 
 ### Our Goals
 
-We are a group of people who have passion in the open source code community. Our goal for this service is to provide the greatest possible convenience to developers so that they don&rsquo;t have to set up a personal web server just to showcase their projects online. We know that most open source project is built with a lack of financial support and is intended not to get any benefit financially. We try to help you with that, so you can focus only on the development process.
+We are a group of people who have passion in the open source code community. Our goal for this service is to provide the greatest possible convenience to developers so that they don&rsquo;t have to set up a personal web server just to store and to showcase their projects online. We know that most open source project is built with a lack of financial support and is intended not to get any benefit financially. We try to help you with that, so you can focus only on the development process.
 
 ### Our Team
 
@@ -54,7 +54,7 @@ Statically can serves **raw files** from these providers with proper `Content-Ty
  - Bitbucket
  - WordPress SVN
 
-## Cache Behavior
+### Cache Behavior
 
 There are two versions of Statically: **Production and Development**. Below you will learn how to use Statically as a Production CDN and Development CDN.
 
@@ -79,7 +79,7 @@ There are two versions of Statically: **Production and Development**. Below you 
 
     * [https://cdn.statically.io/gh/jquery/jquery-dist/master/dist/jquery.min.js?env=dev](https://cdn.statically.io/gh/jquery/jquery-dist/master/dist/jquery.min.js?env=dev)
 
-## Uptime
+### Uptime
 
 We keep users away from all downtime, we apply failover to each of our systems, for more information about network status, please check it in our [status page](https://status.marsble.com).
 
@@ -87,4 +87,8 @@ We keep users away from all downtime, we apply failover to each of our systems, 
 
 Make the project even better by [becoming a sponsor](/become-a-sponsor).
 
-Join our mailing list today! _TODO_
+### Mailing List
+
+Join our mailing list now to get the latest information about our projects so that it will be notified directly to your inbox!
+
+[subscribe form goes here]
