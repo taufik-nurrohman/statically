@@ -90,3 +90,13 @@ layout_data:
   </div>
 </div>
 {% endif %}
+
+{% if site.data.sponsors_alt %}
+<div class="container-fluid sponsors alt">
+  <div>
+    {% for sponsor in site.data.sponsors_alt %}
+    <a href="{{ sponsor.link }}" title="{{ sponsor.title }}" target="_blank"><img src="{{ sponsor.image | prepend: site.url }}" alt="{{ sponsor.description | default: sponsor.title }}"></a>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

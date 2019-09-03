@@ -1,6 +1,6 @@
 ---
 title: 'Credits'
-description: 'Lorem ipsum dolor sit amet.'
+description: 'External resources that we used on this site.'
 layout: page
 layout_data:
   skin:

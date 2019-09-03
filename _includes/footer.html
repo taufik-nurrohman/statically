@@ -7,6 +7,8 @@
           </div>
           <div class="col-sm-5 text-center text-lg-left">
             <h4>WordPress Plugin</h4>
+            <!-- TODO: Use Bootstrap's Media markup instead? -->
+            <img src="{{ site.url }}/static/svg/wordpress-logo.svg" width="100" height="100" style="float: left; margin-right: 1em;">
             <p>Are you running a WordPress site? <strong>We got You!</strong> Statically service can be used on WordPress site too. With this plugin, you&rsquo;ll be able to:</p>
             <ul>
               <li>Replace WordPress library with Statically CDN.</li>
@@ -14,10 +16,11 @@
               <li>Edit and crop images on the fly.</li>
               <li>Reduce origin server loads.</li>
             </ul>
-            <p>
+            <!-- p>
               <a class="btn btn-sm" href="">Install</a>
               <a class="btn btn-sm" href="">Docs</a>
-            </p>
+            </p -->
+            <p>Coming soon.</p>
           </div>
         </div>
       </div>
@@ -31,7 +34,7 @@
                 {% if link.link %}
                 <a href="{{ link.link }}" title="{{ link.description }}" target="_blank">{{ link.title }}</a>
                 {% elsif link.path %}
-                <a href="{{ link.path | prepend: site.url }}" title="{{ link.description }}" target="_blank">{{ link.title }}</a>
+                <a href="{{ link.path | prepend: site.url }}" title="{{ link.description }}">{{ link.title }}</a>
                 {% else %}
                 <span title="{{ link.description }}">{{ link.title }}</span>
                 {% endif %}
