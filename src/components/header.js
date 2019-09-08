@@ -7,7 +7,7 @@ function Header({ siteTitle }) {
 
   return (
     <nav className="border-b">
-      <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto p-2">
+      <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto p-4">
         <Link
           to="/"
           id="logo"
@@ -25,7 +25,7 @@ function Header({ siteTitle }) {
           onClick={() => toggleExpansion(!isExpanded)}
         >
           <svg
-            className="fill-current h-3 w-3"
+            className="fill-current h-4 w-4"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -39,52 +39,52 @@ function Header({ siteTitle }) {
             isExpanded ? `block` : `hidden`
           } md:block md:flex md:items-center w-full md:w-auto`}
         >
-          <div className="text-sm">
+          <div className="font-semibold">
             <Link
               to="/features"
-              className="block md:inline-block mt-4 md:mt-0 mr-6 font-semibold text-gray-800 hover:text-red-500 focus:text-red-500"
+              className="block md:inline-block mt-4 md:mt-0 mr-6 text-gray-800 hover:text-red-500 focus:text-red-500"
             >
               Features
             </Link>
 
             <Link
               to="/docs"
-              className="block md:inline-block mt-4 md:mt-0 mr-6 font-semibold text-gray-800 hover:text-red-500 focus:text-red-500"
+              className="block md:inline-block mt-4 md:mt-0 mr-6 text-gray-800 hover:text-red-500 focus:text-red-500"
             >
               Docs
             </Link>
 
             <Link
               to="/support-statically"
-              className="block md:inline-block mt-4 md:mt-0 mr-6 font-semibold text-gray-800 hover:text-red-500 focus:text-red-500"
+              className="block md:inline-block mt-4 md:mt-0 mr-6 text-gray-800 hover:text-red-500 focus:text-red-500"
             >
               Support us!
             </Link>
 
             <Link
               to="/sponsors"
-              className="block md:inline-block mt-4 md:mt-0 mr-6 font-semibold text-gray-800 hover:text-red-500 focus:text-red-500"
+              className="block md:inline-block mt-4 md:mt-0 mr-6 text-gray-800 hover:text-red-500 focus:text-red-500"
             >
               Sponsors
             </Link>
 
             <Link
               to="/network"
-              className="block md:inline-block mt-4 md:mt-0 mr-6 font-semibold text-gray-800 hover:text-red-500 focus:text-red-500"
+              className="block md:inline-block mt-4 md:mt-0 mr-6 text-gray-800 hover:text-red-500 focus:text-red-500"
             >
               Network
             </Link>
 
             <Link
               to="/blog"
-              className="block md:inline-block mt-4 md:mt-0 mr-6 font-semibold text-gray-800 hover:text-red-500 focus:text-red-500"
+              className="block md:inline-block mt-4 md:mt-0 mr-6 text-gray-800 hover:text-red-500 focus:text-red-500"
             >
               Blog
             </Link>
 
             <Link
               to="/contact"
-              className="block md:inline-block mt-4 md:mt-0 font-semibold text-gray-800 hover:text-red-500 focus:text-red-500"
+              className="block md:inline-block mt-4 md:mt-0 text-gray-800 hover:text-red-500 focus:text-red-500"
             >
               Help
             </Link>

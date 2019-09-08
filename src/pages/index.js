@@ -20,7 +20,7 @@ function IndexPage() {
       <div className="px-4 py-8 md:p-8">
 
         <section className="mb-24 text-center max-w-4xl mx-auto p-0 md:px-8">
-          <h1 className="text-2xl font-bold inline-block max-w-2xl my-8 p-3">
+          <h1 className="text-3xl font-bold inline-block max-w-3xl my-8 p-3">
             A free, fast, &amp; modern CDN for open source projects, WordPress, images, and any static assets.
           </h1>
 

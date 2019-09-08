@@ -53,7 +53,7 @@ function Solutions() {
           </div>
 
           <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 mb-10 md:text-center max-w-xss mx-auto">
-            <h3 className="text-3xl font-bold mb-5">Because static files souldn't be slow.</h3>
+            <h3 className="text-3xl font-bold mb-5">Because static files shouldn&rsquo;t be slow.</h3>
             <Link
               to="/github"
               className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-3 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
