@@ -1,1 +1,0 @@
-{% assign total = site[include.k].size %}{% for item in site[include.k] %}{% if forloop.index > 1 %}{% if forloop.index != total %}, {% else %} and {% endif %}{% endif %}{{ item }}{% endfor %}
